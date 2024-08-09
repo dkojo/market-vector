@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: oxer-app-container
-        image: 870342665742.dkr.ecr.us-east-1.amazonaws.com/market-vector:V003
+        image: 870342665742.dkr.ecr.us-east-1.amazonaws.com/marketvector-app-repo:V003
         ports:
         - containerPort: 80
 
