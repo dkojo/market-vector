@@ -1,7 +1,7 @@
 {
   "cluster": "marketvector-ecs-cluster",
   "serviceName": "marketvector-ecs-service",
-  "taskDefinition": "arn:aws:ecs:us-east-1:992382432814:task-definition/marketvector-app:52",
+  "taskDefinition": "arn:aws:ecs:us-east-1:870342665742:task-definition/marketvector-app:52",
   "desiredCount": 2,
   "launchType": "FARGATE",
   "platformVersion": "LATEST",
@@ -9,7 +9,7 @@
     "awsvpcConfiguration": {
       "subnets": [
         "subnet-0dca88e8ee5b079ee",
-        "subnet-05b32668c8279eff6"
+        "subnet-0f09a21c85350ebdc"
       ],
       "securityGroups": [
         "sg-08fa0792d95f6976a"
@@ -19,7 +19,7 @@
   },
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:992382432814:targetgroup/marketvector-tg/98cddedb5cd2c42c",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:870342665742:targetgroup/marketvector-tg/98cddedb5cd2c42c",
       "containerName": "marketvector-app",
       "containerPort": 80
     }
