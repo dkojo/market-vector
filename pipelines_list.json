@@ -1,7 +1,14 @@
 [
   {
+    "name": "terraform-configuration",
+    "repo": "https://github.com/dkojo/market-vector.git",
+    "branch": "main",
+    "jenkinsfile": "terraform/Jenkinsfile"
+  },
+  
+  {
     "name": "kubernetes",
-    "repo": "https://github.com/astine85/market-vector.git",
+    "repo": "https://github.com/dkojo/market-vector.git",
     "branch": "main",
     "jenkinsfile": "kubernetes/Jenkinsfile"
   }
