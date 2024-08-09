@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Branch to build from')
-        string(name: 'REPO_URL', defaultValue: '//https://github.com/dkojo/market-vector.git', description: 'Repository URL to build from')
+        string(name: 'REPO_URL', defaultValue: 'https://github.com/dkojo/market-vector.git', description: 'Repository URL to build from')
         string(name: 'VERSION', defaultValue: "V00${BUILD_ID}", description: 'Version of Docker image to be built, e.g., V001')
         
     }
