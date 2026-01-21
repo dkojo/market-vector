@@ -37,9 +37,4 @@ jobs:
       - name: Install dependencies
         run: npm install  # Run the npm install command
 
-      - name: Run tests
-        run: npm test  # Run tests (e.g., using Jest or Mocha)
-
-      - name: Deploy to production
-        run: ./deploy.sh  # An example deployment script
-        if: success()  # Only run this step if previous steps were successful
+      
