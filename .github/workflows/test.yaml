@@ -1,0 +1,50 @@
+name: Workflow Name
+
+# Trigger events
+on:
+  push:
+    branches:
+      - master  # Triggers when code is pushed to the 'master' branch
+  pull_request:
+    branches:
+      - master  # Triggers on pull requests targeting the 'master' branch
+
+# Define jobs
+jobs:
+  job_name:  # Name of the job (can be any name)
+    runs-on: ubuntu-latest  # The environment where the job runs (you can choose other OS types like windows-latest or macos-latest)
+
+    # Steps to run within the job
+    steps:
+      - name: Checking out a repository
+        uses: actions/checkout@v2  # Checks out the code
+
+      - name: Checking out another repository
+        uses: actions/checkout@v2  # Checks out the code
+       
+        with:
+          repository: 'dkojo/springboot-app-ecs'
+          ref: 'testbranch'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Example for setting up Node.js (if your project is Node.js)
+
+        with:
+          node-version: '14'  # Specify the version of Node.js you want
+    
+
+      - uses: actions/setup-java@v5
+        with:
+            distribution: 'temurin' # See 'Supported distributions' for available options
+            java-version: '21'
+      - run: java HelloWorldApp.java
+
+      - name: Install dependencies
+        run: npm install  # Run the npm install command
+
+      - name: Run tests
+        run: npm test  # Run tests (e.g., using Jest or Mocha)
+
+      - name: Deploy to production
+        run: ./deploy.sh  # An example deployment script
+        if: success()  # Only run this step if previous steps were successful
