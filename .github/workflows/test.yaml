@@ -39,6 +39,7 @@ jobs:
 
   
   test_job_2:  # Name of the job (can be any name)
+    needs: test_job_1
     runs-on: ubuntu-latest  # The environment where the job runs (you can choose other OS types like windows-latest or macos-latest)
 
     # Steps to run within the job
