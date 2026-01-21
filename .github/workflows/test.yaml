@@ -2,12 +2,7 @@ name: Workflow Name
 
 # Trigger events
 on:
-  push:
-    branches:
-      - master  # Triggers when code is pushed to the 'master' branch
-  pull_request:
-    branches:
-      - master  # Triggers on pull requests targeting the 'master' branch
+  workflow_dispatch:
 
 # Define jobs
 jobs:
