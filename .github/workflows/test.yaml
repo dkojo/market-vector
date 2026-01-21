@@ -11,7 +11,7 @@ on:
 
 # Define jobs
 jobs:
-  job_name:  # Name of the job (can be any name)
+  test_job_1:  # Name of the job (can be any name)
     runs-on: ubuntu-latest  # The environment where the job runs (you can choose other OS types like windows-latest or macos-latest)
 
     # Steps to run within the job
@@ -37,4 +37,14 @@ jobs:
       - name: Install dependencies
         run: npm install  # Run the npm install command
 
-      
+  
+  test_job_2:  # Name of the job (can be any name)
+    runs-on: ubuntu-latest  # The environment where the job runs (you can choose other OS types like windows-latest or macos-latest)
+
+    # Steps to run within the job
+    steps:
+      - name: Checking out a repository
+        uses: actions/checkout@v2  # Checks out the code
+
+      - name: Checking out another repository
+        uses: actions/checkout@v2  # Checks out the code
