@@ -37,7 +37,7 @@ jobs:
         with:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '21'
-      - run: java HelloWorldApp.java
+      - run: javac HelloWorldApp.java
       - run: java HelloWorldApp  # Run the compiled class (without the .java extension)
 
 
