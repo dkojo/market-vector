@@ -1,0 +1,42 @@
+name: Manual Dispatch with Inputs and Environment Variables
+
+on:
+  workflow_dispatch:
+    inputs:
+      java_version:
+        description: 'Java version to use (e.g., 11, 17, 21)'
+        required: true
+        default: '21'  # Default to Java 21 if no input is provided
+      environment:
+        description: 'Deployment environment (e.g., dev, prod)'
+        required: true
+        default: 'dev'  # Default to 'dev' environment
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Run the job on an Ubuntu runner
+
+    env:
+      JAVA_VERSION: ${{ github.event.inputs.java_version }}  # Set Java version from the input
+      DEPLOY_ENV: ${{ github.event.inputs.environment }}  # Set deployment environment from the input
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'  # Use the Temurin distribution
+          java-version: ${{ env.JAVA_VERSION }}  # Use Java version from input
+
+      - name: Print environment variables
+        run: |
+          echo "Deploying to ${DEPLOY_ENV} environment"
+          echo "Using Java version: ${JAVA_VERSION}"
+
+      - name: Compile Java file
+        run: javac HelloWorldApp.java  # Compile the Java file
+
+      - name: Run Java application
+        run: java HelloWorldApp  # Run the compiled class file
