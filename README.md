@@ -1,4 +1,4 @@
-## AWS ECS Deployment Automation
+## AWS ECS Deployment Automation now using GitHub Actions
 
 This project automates the deployment of a static website on AWS ECS using Jenkins for CI/CD. It includes Docker for containerization and Terraform for infrastructure provisioning.
 
